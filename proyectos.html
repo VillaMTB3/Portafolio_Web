@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/img/programacion-web.png">
+    <link rel="stylesheet" href="/css/styles-proyectos.css">
+    <link rel="icon" href="/img/programacion-web.png">
+    <title>Mis Proyectos</title>
+</head>
+<body>
+    
+  <header class="encabezado">
+    <h1>Portafolio</h1>
+    <nav class="barra-navegacion">
+      <input type="checkbox" id="menu-toggle" class="menu-toggle"/>
+      <label for="menu-toggle" class="menu-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="list_icon" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+          </svg>
+      </label>
+      <ul class="estilo-menu" id="navbar">
+        <li><a href="/index.html">Inicio</a></li>
+        <li><a href="/sobre-mi.html">Sobre Mí</a></li>
+        <li><a href="/habilidades.html">Habilidades</a></li>
+        <li><a href="/proyectos.html">Proyectos</a></li>
+        <li><a href="/contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+</header>
+  
+
+      <h2>Mis Proyectos</h2>
+    
+
+    <div class="contenedor">
+        <div class="proyectos">
+            <h2>Rutas de Megabus</h2>
+            <img class="img-contenedor" src="/img/rutas.jpg" alt="imagen de rutas">
+        </div>
+
+        <div class="proyectos">
+            <h2>Visita al Infierno</h2>
+            <img class="img-contenedor" src="/img/infierno.jpg" alt="imagen de infierno">
+        </div>
+    </div>
+
+    <div id="modalRutas" class="modal">
+        <div class="modal-contenido">
+          <span class="cerrar">X</span>
+          <h2>Rutas de Megabus</h2>
+          <p>Este proyecto consiste en una aplicación que permite a los usuarios consultar las rutas del sistema de transporte Megabus, mostrando información detallada sobre las paradas y horarios.</p>
+        </div>
+      </div>
+      
+      <div id="modalInfierno" class="modal">
+        <div class="modal-contenido">
+          <span class="cerrar">X</span>
+          <h2>Visita al Infierno</h2>
+          <p>Este proyecto es una experiencia interactiva que lleva a los usuarios a través de las diferentes capas del infierno, basadas en la divina comedia, ofreciendo descripciones y visuales impactantes de cada nivel.</p>
+        </div>
+      </div>
+    <footer class="footer">
+        <p>
+          &copy; 2024 Juan David Villamil Rojas. Todos los derechos reservados.
+        </p>
+        <a href="https://www.facebook.com/juandavillamiil/"> <img class="logo" src="/img/facebook.png" alt="logo red social" /></a> 
+  
+        <a href="https://www.instagram.com/juandavillamiil/"> <img class="logo" src="/img/instagram.png" alt="logo red social" /></a>
+  
+        <a href="https://github.com/VillaMTB3"> <img class="logo" src="/img/github.png" alt="logo red social" /></a>
+    </footer>
+
+    <script>
+        const modalRutas = document.getElementById("modalRutas");
+        const modalInfierno = document.getElementById("modalInfierno");
+        
+        const proyectoRutas = document.querySelectorAll(".proyectos")[0];
+        const proyectoInfierno = document.querySelectorAll(".proyectos")[1];
+        
+        const cerrarBtns = document.querySelectorAll(".cerrar");
+        
+        proyectoRutas.onclick = function() {
+          modalRutas.style.display = "block";
+        }
+        
+        proyectoInfierno.onclick = function() {
+          modalInfierno.style.display = "block";
+        }
+        
+        cerrarBtns.forEach(btn => {
+          btn.onclick = function() {
+            this.parentElement.parentElement.style.display = "none";
+          }
+        });
+        
+        window.onclick = function(event) {
+          if (event.target.classList.contains('modal')) {
+            event.target.style.display = "none";
+          }
+        }
+        </script>
+        
+</body>
+</html>
